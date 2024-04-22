@@ -1,6 +1,6 @@
 function App() {
   return (
-    <div className="">
+    <div className="w-screen h-screen flex justify-center items-center">
       Calculator App
     </div>
   );
