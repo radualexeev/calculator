@@ -5,15 +5,27 @@ import Button from "./components/Button";
 
 export default function App() {
   const [displayData, setDisplayData] = useState("0")
-  
+
   const handleClick = (any) => {
-    handleChange(any)
+
+    const operations = ["C", "+", "-", "/", "x", "."]
+    
+    if (!operations.includes(any)) {
+      handleChange(any)
+    } else {
+      
+    }
   }
 
   const handleChange = (any) => {
-    setDisplayData(any);
+
+    if (displayData.at(0) === "0") {
+      setDisplayData(any);
+    } else {
+      setDisplayData(displayData + any);
+    }
   }
-  
+
   return (
     <div className="w-screen h-screen bg-slate-400 flex justify-center items-center">
       <Container>
