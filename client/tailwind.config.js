@@ -6,10 +6,12 @@ module.exports = {
   theme: {
     extend: {
       width: {
-        "calculator": "600px"
+        "calculator": "600px",
+        "button": "112px"
       },
       height: {
-        "calculator": "500px"
+        "calculator": "500px",
+        "button": "64px"
       }
     },
   },
