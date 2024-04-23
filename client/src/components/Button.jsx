@@ -1,6 +1,7 @@
-export default function Button( {value} ) {
+export default function Button( {value, color, background, border} ) {
+    console.log(background)
     return (
-        <div className="w-button h-button bg-[#FFF0F5] rounded-md border-b-4 border-[#79A6BA] flex justify-center items-center text-3xl text-[#9ED2E9]">
+        <div className={`w-button h-button ${background} rounded-md border-b-8 ${border} flex justify-center items-center text-3xl ${color}`}>
             {value}
         </div>
     );
