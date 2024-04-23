@@ -7,11 +7,13 @@ module.exports = {
     extend: {
       width: {
         "calculator": "600px",
-        "button": "112px"
+        "button": "112px",
+        "display": "398px"
       },
       height: {
         "calculator": "500px",
-        "button": "64px"
+        "button": "64px",
+        "display": "64px"
       }
     },
   },
