@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import Container from "./components/Container";
 import Display from "./components/Display";
 import Button from "./components/Button";
+import ResetButton from "./components/ResetButton";
 
 export default function App() {
-  const [displayData, setDisplayData] = useState("")
+  const [displayData, setDisplayData] = useState("0")
   // const [acumulator, setAcumulator] = useState("")
   // const [currentNumber, setCurentNumber] = useState("")
 
@@ -13,16 +14,21 @@ export default function App() {
     // const operator = ["+", "-", "/", "*", "="]
   }
 
+  const handleReset = (input) => {
+    console.log(input)
+    setDisplayData(input)
+    handleChange(input)
+  }
+
   const handleChange = (value) => {
     console.log("Получено", value)
-    
-    
+    setDisplayData(displayData)
   }
 
   return (
     <div className="w-screen h-screen bg-slate-400 flex justify-center items-center">
       <Container>
-        <Button value={"C"} background={"bg-[#FD9EA9]"} color={"text-[#FFFFFF]"} border={"border-[#FD7A89]"} onClick={handleClick}/>
+        <ResetButton value={"C"} background={"bg-[#FD9EA9]"} color={"text-[#FFFFFF]"} border={"border-[#FD7A89]"} onClick={handleReset} />
         <Display onChange={handleChange} />
         <Button value={"7"} background={"bg-[#FFFFFF]"} color={"text-[#79A6BA]"} border={"border-[#79A6BA]"} onClick={handleClick}/>
         <Button value={"8"} background={"bg-[#FFFFFF]"} color={"text-[#79A6BA]"} border={"border-[#79A6BA]"} onClick={handleClick}/>
