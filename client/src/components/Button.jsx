@@ -1,10 +1,6 @@
-export default function Button( {value, color, background, border, onClick} ) {
-    const handleClick = () => {
-        onClick(value)
-    }
-
+export default function Button( {value} ) {
     return (
-        <div className={`button w-button h-button ${background} rounded-md border-b-8 ${border} flex justify-center items-center text-3xl ${color} cursor-pointer hover:shadow-inner hover:shadow-[#79A6BA] select-none`} onClick={handleClick}>
+        <div className="w-button h-button bg-[#FFFFFF] rounded-md border-b-8 border-[#79A6BA] flex justify-center items-center text-3xl text-[#79A6BA] cursor-pointer hover:shadow-inner hover:shadow-[#79A6BA] select-none">
             {value}
         </div>
     );
