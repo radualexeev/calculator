@@ -15,12 +15,6 @@ export default function App() {
     // const operator = ["+", "-", "/", "*", "="]
   }
 
-  const handleReset = (input) => {
-    console.log(input)
-    setDisplayData(input)
-    handleChange(input)
-  }
-
   const handleChange = (value) => {
     console.log("Получено", value)
     setDisplayData(displayData)
@@ -29,7 +23,7 @@ export default function App() {
   return (
     <div className="w-screen h-screen bg-slate-400 flex justify-center items-center">
       <Container>
-        <ResetButton value={"C"} background={"bg-[#FD9EA9]"} color={"text-[#FFFFFF]"} border={"border-[#FD7A89]"} onClick={handleReset} />
+        <ResetButton />
         <Display onChange={handleChange} />
         <Button value={"7"} background={"bg-[#FFFFFF]"} color={"text-[#79A6BA]"} border={"border-[#79A6BA]"} onClick={handleClick}/>
         <Button value={"8"} background={"bg-[#FFFFFF]"} color={"text-[#79A6BA]"} border={"border-[#79A6BA]"} onClick={handleClick}/>
