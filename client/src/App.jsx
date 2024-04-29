@@ -4,6 +4,7 @@ import Container from "./components/Container";
 import Display from "./components/Display";
 import Button from "./components/Button";
 import ResetButton from "./components/ResetButton";
+import CalculateButton from "./components/CalculateButton";
 
 export default function App() {
   const [displayData, setDisplayData] = useState("0")
@@ -44,7 +45,7 @@ export default function App() {
         <Button value={"/"} background={"bg-[#FFF0F5]"} color={"text-[#79A6BA]"} border={"border-[#79A6BA]"} onClick={handleClick}/>
         <Button value={"0"} background={"bg-[#FFFFFF]"} color={"text-[#79A6BA]"} border={"border-[#79A6BA]"} onClick={handleClick}/>
         <Button value={"."} background={"bg-[#FFFFFF]"} color={"text-[#79A6BA]"} border={"border-[#79A6BA]"} onClick={handleClick}/>
-        <Button value={"="} background={"bg-[#F1FF98]"} color={"text-[#79A6BA]"} border={"border-[#9DA858]"} onClick={handleClick}/>
+        <CalculateButton />
         <Button value={"*"} background={"bg-[#FFF0F5]"} color={"text-[#79A6BA]"} border={"border-[#79A6BA]"} onClick={handleClick}/>
       </Container>
     </div>
