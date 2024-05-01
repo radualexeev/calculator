@@ -14,25 +14,27 @@
   <body>
     <div id="container">
       <div id="calculator">
-        <button id="reset">C</button>
+        <button id="reset" onclick="handleReset()">C</button>
         <input type="text" required id="display" placeholder="0" autocomplete="off">
-        <button id="button">7</button>
-        <button id="button">8</button>
-        <button id="button">9</button>
-        <button id="operator">+</button>
-        <button id="button">4</button>
-        <button id="button">5</button>
-        <button id="button">6</button>
-        <button id="operator">-</button>
-        <button id="button">1</button>
-        <button id="button">2</button>
-        <button id="button">3</button>
-        <button id="operator">/</button>
-        <button id="button">0</button>
-        <button id="button">.</button>
-        <button id="calculate">=</button>
-        <button id="operator">*</button>
+        <button id="button" onclick="handleClick('7')">7</button>
+        <button id="button" onclick="handleClick('8')">8</button>
+        <button id="button" onclick="handleClick('9')">9</button>
+        <button id="operator" onclick="handleOperation('+')">+</button>
+        <button id="button" onclick="handleClick('4')">4</button>
+        <button id="button" onclick="handleClick('5')">5</button>
+        <button id="button" onclick="handleClick('6')">6</button>
+        <button id="operator" onclick="handleOperation('-')">-</button>
+        <button id="button" onclick="handleClick('1')">1</button>
+        <button id="button" onclick="handleClick('2')">2</button>
+        <button id="button" onclick="handleClick('3')">3</button>
+        <button id="operator" onclick="handleOperation('/')">/</button>
+        <button id="button" onclick="handleClick('0')">0</button>
+        <button id="button" onclick="handleClick('.')">.</button>
+        <button id="calculate" onclick="handleCalculate('=')">=</button>
+        <button id="operator" onclick="handleOperation('*')">*</button>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
