@@ -1,25 +1,35 @@
-const display = document.getElementById("display")
+const display = document.getElementById("display");
 let lever = false;
+let result = false;
 let [firstNumber, secondNumber, operator] = "";
 
 const handleClick = (value) => {
-    if (!lever) {
-        display.value += value
-    } else {
+    if (!lever && !result) {
+        display.value += value;
+    } else if (result) {
         display.value = ""
-        display.value += value
-        lever = false
-    }
-}
+        display.value += value;
+        lever = false;
+        result = false;
+    } else {
+        display.value = "";
+        display.value += value;
+        lever = false;
+    };
+};
 
 const handleOperation = (value) => {
-  if (!lever) {
+  if (!lever && !firstNumber) {
     firstNumber = display.value;
     lever = true;
   } else {
     secondNumber = display.value;
     lever = false;
   };
+
+  if (operator) {
+    calculate();
+  }
 
   switch (value) {
     case "+":
@@ -39,22 +49,37 @@ const handleOperation = (value) => {
     break;
 
     case "=":
-      calculate()
+      if (!secondNumber) {
+        firstNumber = display.value;
+      } else if (firstNumber && operator && secondNumber) {
+        calculate();
+      };
     break;
 
     default:
-      if (firstNumber && operator && secondNumber) {
-        calculate()
-      }
       break;
-  }
+  };
 
 };
 
 const calculate = () => {
   if (!secondNumber || !operator) {
-    display.value = firstNumber;
+    operator = "";
+    lever = true;
   } else {
-    display.value = eval(`${firstNumber} ${operator} ${secondNumber}`)
+    display.value = eval(`${firstNumber} ${operator} ${secondNumber}`);
+    secondNumber = "";
+    operator = "";
+    firstNumber = display.value;
+    lever = false;
   }
+
+  result = true;
+};
+
+const handleReset = () => {
+  firstNumber = "";
+  operator = "";
+  secondNumber = "";
+  display.value = "";
 };
