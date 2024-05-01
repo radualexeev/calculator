@@ -38,11 +38,23 @@ const handleOperation = (value) => {
       operator = "*";
     break;
 
+    case "=":
+      calculate()
+    break;
+
     default:
       if (firstNumber && operator && secondNumber) {
-        calculate(firstNumber, operator, secondNumber)
+        calculate()
       }
       break;
   }
 
+};
+
+const calculate = () => {
+  if (!secondNumber || !operator) {
+    display.value = firstNumber;
+  } else {
+    display.value = eval(`${firstNumber} ${operator} ${secondNumber}`)
+  }
 };
