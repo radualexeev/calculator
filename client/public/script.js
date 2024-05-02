@@ -2,12 +2,13 @@ const display = document.getElementById("display");
 let lever = false;
 let result = false;
 let [firstNumber, secondNumber, operator] = "";
+const regex = /^(?!0\d)(?!.*\.\..*)(?!^\.0$)\d{1,7}(?:\.\d*)?$/
 
 const handleClick = (value) => {
     if (!lever && !result) {
-        display.value += value;
-    } else if (result) {
-        display.value = ""
+      (isAcceptableNumber()) ? display.value += value : null;
+    } else if (result && isAcceptableNumber()) {
+        display.value = "";
         display.value += value;
         lever = false;
         result = false;
@@ -83,3 +84,11 @@ const handleReset = () => {
   secondNumber = "";
   display.value = "";
 };
+
+const isAcceptableNumber = () => {
+  if (display.value === "") {
+    return true;
+  } else {
+    return regex.test(display.value)
+  }
+}
